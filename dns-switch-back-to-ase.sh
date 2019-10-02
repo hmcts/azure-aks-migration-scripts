@@ -36,7 +36,7 @@ set -euo pipefail
 
 for nodeIP in ${CONSUL_NODES[*]}
 do
-  curl -X PUT -H "Accept: application/json" http://${nodeIP}:8500/v1/agent/service/deregister/$service-$env  || echo "Failed reregistering from $nodeIP"
+  curl -X PUT -H "Accept: application/json" http://${nodeIP}:8500/v1/agent/service/deregister/$service-$env  || echo "Failed deregistering from $nodeIP"
 done
 
 curl -X PUT -H "Accept: application/json" http://${CONSUL_NODES[0]}:8500/v1/agent/service/register -d '
