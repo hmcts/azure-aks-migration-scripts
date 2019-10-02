@@ -14,7 +14,7 @@ if [ -z "${service}" ] || [ -z "${env}" ] ; then
   exit 1
 fi
 
-domain=${service}-${env}.service.core-compute-${env}.internal
+domain=${serviceName}.service.core-compute-${env}.internal
 ipAddress=""
 
 case "${env}" in
