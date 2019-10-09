@@ -27,7 +27,7 @@ case "${env}" in
     CONSUL_NODES=(10.96.72.4 10.96.72.5 10.96.72.6)
 esac
 
-echo "Changing DNS entry to point to ASE in ${env} for ${domain}"
+echo "Changing DNS entry to point to AKS in ${env} for ${domain}"
 
 echo "DNS is currently pointing to:"
 dig +short $domain
