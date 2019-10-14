@@ -19,3 +19,11 @@ If you want to do a quick DNS switch you can use this script, or accidentally ch
 ```bash
 ./dns-switch-to-aks.sh plum-recipes-service prod
 ```
+
+## Check app
+
+This script checks that the app is healthy on both ingress controllers and on the loadbalancer, it should be run before any go-live
+
+```bash
+./check-prod-health-host.sh sscs-bulk-scan-prod<
+```
