@@ -6,7 +6,7 @@ env=$2
 serviceName=${service}-${env}
 
 function usage() {
-  echo "usage: ./dns-switch-back-to-ase.sh <service, i.e cmc-claim-store> <env, prod or aat>" 
+  echo "usage: ./dns-switch-back-to-ase.sh <service, i.e cmc-claim-store> <env: prod or aat or ithc>" 
 }
 
 if [ -z "${service}" ] || [ -z "${env}" ] ; then
@@ -21,6 +21,10 @@ case "${env}" in
   "aat")
     SWITCH_ADDRESS=10.96.140.11
     CONSUL_NODES=(10.96.136.7 10.96.136.9 10.96.136.10)
+  ;;
+  "ithc")
+    SWITCH_ADDRESS=10.112.12.11
+    CONSUL_NODES=(10.112.8.4 10.112.8.5 10.112.8.6)
   ;;
   "prod")
     SWITCH_ADDRESS=10.96.76.11
